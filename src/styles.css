@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color:#EEF7D4;
+}
+* {
+    font-family: 'Raleway';
+}
+
+button {
+    background: #79B33A;
+    color: white;
+    padding: 1.2em;
+    width: 300px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+button.default {
+    background: #79B33A;
+}
+
+button.warning {
+    background: #c9c33a;
+}
+
+button.risc {
+    background: #c93a3d;
+}
+
+button.natural {
+    background: #3a72c9;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.row {
+    max-width: 100rem;
+}

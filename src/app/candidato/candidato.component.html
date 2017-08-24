@@ -1,0 +1,44 @@
+
+<div class="row">
+  <div class="small-12 centered columns">
+    <div>  
+      <div id="breadcrumb">: : {{breadcrumb}}</div>
+      <a class="btn btn-danger" (click)="voltarMenu()" data-toggle="tooltip" title="Voltar">
+        <i class="fa fa-arrow-left fa-2x"></i>
+      </a>
+    </div>
+    
+    <div *ngIf="stage == 'lista'">
+      <div class="row">
+        <div class="small-8 large-3 centered columns">
+          <button (click)="incluir()" class="default">Novo Candidato</button>
+        </div>
+      </div>
+      <div class="details-container"> 
+          <a (click)="selecionar(c.$key, c.nome)" *ngFor="let c of candidatos | async">
+            {{c.nome}}<br/>
+            <p>{{c.endereco}} - {{c.cidade}}</p>
+            <i class="fa fa-trash-o inner-button" data-toggle="tooltip" title="Excluir" (click)="apagar(c.$key);$event.stopPropagation();"></i>
+          </a>
+      </div>
+    </div>
+
+    <div *ngIf="stage == 'novo'">
+      <div class="row">
+        <div class="small-12 large-6 columns centered">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" placeholder="Nome" [(ngModel)]="nome"/>
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" placeholder="Endereço" [(ngModel)]="endereco"/>
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" placeholder="Cidade" [(ngModel)]="cidade"/>
+          <label for="telefone">Telefone:</label>
+          <input type="text" id="telefone" placeholder="Telefone" [(ngModel)]="telefone"/>
+          <button (click)="salvar()" class="default">Salvar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
